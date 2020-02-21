@@ -10,7 +10,7 @@ For this project the following tools were used
 - Design compiler - Synopsys
 - Innovus - Cadence
 
-## Group components
+## Contributors
 
 This project was completed for the Integrated systems architecture course of Politecnico di Torino by the following contributors
 - Federico Pozzana
