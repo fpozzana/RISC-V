@@ -1,0 +1,19 @@
+Address     Code        Basic
+
+0x00800000  0x00c504b3  add x9,x10,x12   	# add x10 and x12, store in x9
+0x00800004  0x00a4c3b3  xor x7,x9,x10     # xor between x9 and x10, store in x7 (data dependency, fw at mem stage)
+0x00800008  0x00000013	nop
+0x0080000c  0x00000013	nop
+0x00800010  0x00000013	nop
+0x00800018  0x005301b3  add x3,x6,x5      # add x6 and x5, store in x3
+0x0080001c  0x00000013	nop
+0x00800020  0x0011c433  xor x8,x3,x1		  # xor between x3 and x1, store in x8 (data dependency, fw at exestage)
+0x00800024  0x00000013	nop
+0x00800028  0x00000013	nop
+0x0080002c  0x00000013	nop
+0x00800030  0x00f706b3  add x13,x14,x15   # add x14 and x15, save in x13
+0x00800034  0x00000013	nop
+0x00800038  0x00000013	nop
+0x0080003c  0x00c6c933	xor x18,x13,x12		# xor between x13 and x11, store in x18 (no data dependency)
+0x00800040  0x00000013	nop
+0x00800044  0x00000013	nop

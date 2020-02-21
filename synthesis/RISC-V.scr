@@ -1,0 +1,69 @@
+##############################################################
+#SCRIPT FOR SPEEDING UP and RECORDING the RISC-V SYNTHESIS#
+# analyzing and checking vhdl netlist#
+# here the analyze command is used for each file from bottom to top #
+##############################################################
+#analyze the components
+analyze -library WORK -format vhdl {../src/define.vhd}
+analyze -library WORK -format vhdl {../src/logPkg.vhd}
+analyze -library WORK -format vhdl {../src/globals.vhd}
+analyze -library WORK -format vhdl {../src/inverter.vhd}
+analyze -library WORK -format vhdl {../src/nand2.vhd}
+analyze -library WORK -format vhdl {../src/mux21Generic.vhd}
+analyze -library WORK -format vhdl {../src/31to1mux.vhd}
+analyze -library WORK -format vhdl {../src/alu.vhd}
+analyze -library WORK -format vhdl {../src/aluController.vhd}
+analyze -library WORK -format vhdl {../src/BDU.vhd}
+analyze -library WORK -format vhdl {../src/controlUnit.vhd}
+analyze -library WORK -format vhdl {../src/FWU.vhd}
+analyze -library WORK -format vhdl {../src/HDU.vhd}
+analyze -library WORK -format vhdl {../src/ImmediateExtender.vhd}
+analyze -library WORK -format vhdl {../src/fd.vhd}
+analyze -library WORK -format vhdl {../src/registerGeneric.vhd}
+analyze -library WORK -format vhdl {../src/registerEnable.vhd}
+analyze -library WORK -format vhdl {../src/registerFile.vhd}
+
+#analyze the datapath
+#registers
+analyze -library WORK -format vhdl {../src/ifidReg.vhd}
+analyze -library WORK -format vhdl {../src/idexReg.vhd}
+analyze -library WORK -format vhdl {../src/exmemReg.vhd}
+analyze -library WORK -format vhdl {../src/memwbReg.vhd}
+#pipeline stages
+analyze -library WORK -format vhdl {../src/fetchStage.vhd}
+analyze -library WORK -format vhdl {../src/decodeStage.vhd}
+analyze -library WORK -format vhdl {../src/executionStage.vhd}
+analyze -library WORK -format vhdl {../src/writebackStage.vhd}
+
+#analyze the top entity
+analyze -library WORK -format vhdl {../src/RISC-Vdatapath.vhd}
+
+set power_preserve_rtl_hier_names true
+##############################################################
+# elaborating the top entity
+elaborate RISC_VDATAPATH -architecture structural > ./elaborate_RISC-VABS.txt
+##############################################################
+link
+#setting constraints for finding max frequency
+create_clock -name MY_CLK -period 3.0 clk
+set_dont_touch_network MY_CLK
+set_clock_uncertainty 0.07 [get_clocks MY_CLK]
+set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clk]
+set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+set_load $OLOAD [all_outputs]
+#compiling
+ungroup -all -flatten
+compile
+#compile_ultra
+#optimize_registers
+#saving reports
+report_timing > ./reports/report_timing_RISC-VABS.txt
+report_area > ./reports/report_area_RISC-VABS.txt
+report_power > ./reports/report_power_RISC-VABS.txt
+#saving data for switching activity
+change_names -hierarchy -rules verilog
+write_sdf ./netlist/RISC-VABS.sdf
+write -f verilog -hierarchy -output ./netlist/RISC-VABS.v
+write -hierarchy -format ddc -output ./netlist/RISC-VABS.ddc
+write_sdc ./netlist/RISC-VABS.sdc
+##############################################################

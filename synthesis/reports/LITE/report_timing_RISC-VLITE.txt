@@ -1,0 +1,109 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'RISC_VDATAPATH' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : RISC_VDATAPATH
+Version: O-2018.06-SP4
+Date   : Thu Feb  6 13:27:20 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: fromDRAM[1]
+              (input port clocked by MY_CLK)
+  Endpoint: IFID/PC4REGISTER/Q_reg[31]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RISC_VDATAPATH     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 f
+  fromDRAM[1] (in)                                        0.00       0.50 f
+  U4922/Z (MUX2_X1)                                       0.06       0.56 f
+  U3001/Z (MUX2_X1)                                       0.06       0.63 f
+  DECODE/RF/Data_two_out_reg[1]/Q (DLH_X1)                0.07       0.69 f
+  U7691/ZN (INV_X1)                                       0.04       0.73 r
+  U7693/ZN (OAI222_X1)                                    0.05       0.78 f
+  U8032/ZN (INV_X1)                                       0.03       0.81 r
+  U8033/ZN (OAI22_X1)                                     0.04       0.84 f
+  U8038/ZN (OAI221_X1)                                    0.06       0.90 r
+  U8039/ZN (OAI221_X1)                                    0.05       0.95 f
+  U8040/ZN (OAI221_X1)                                    0.04       0.99 r
+  U3000/ZN (NAND3_X1)                                     0.04       1.03 f
+  U2987/ZN (NAND3_X1)                                     0.03       1.06 r
+  U3026/ZN (NAND2_X1)                                     0.03       1.08 f
+  U3010/ZN (NAND2_X1)                                     0.02       1.11 r
+  U3011/ZN (AND2_X1)                                      0.04       1.15 r
+  U2979/ZN (NAND2_X1)                                     0.02       1.17 f
+  U2946/ZN (NAND3_X1)                                     0.03       1.20 r
+  U2917/ZN (NAND2_X1)                                     0.02       1.22 f
+  U2918/ZN (AND2_X1)                                      0.04       1.26 f
+  U2975/ZN (NAND3_X1)                                     0.03       1.28 r
+  U2943/ZN (NAND2_X1)                                     0.03       1.31 f
+  U2930/ZN (NAND2_X1)                                     0.02       1.33 r
+  U2912/ZN (AND2_X1)                                      0.04       1.37 r
+  U2911/ZN (NAND2_X1)                                     0.02       1.39 f
+  U2922/ZN (AND2_X1)                                      0.03       1.43 f
+  U2907/ZN (NAND2_X1)                                     0.03       1.46 r
+  U2874/ZN (AND2_X1)                                      0.04       1.50 r
+  U4936/ZN (NAND2_X1)                                     0.02       1.52 f
+  U3022/ZN (NAND2_X1)                                     0.03       1.55 r
+  U8044/ZN (AOI211_X1)                                    0.03       1.58 f
+  U2780/ZN (OAI221_X4)                                    0.11       1.68 r
+  U8106/ZN (AOI22_X1)                                     0.05       1.73 f
+  U2885/ZN (INV_X1)                                       0.04       1.77 r
+  FETCH/add_37/B[9] (RISC_VDATAPATH_DW01_add_3)           0.00       1.77 r
+  FETCH/add_37/U139/ZN (NAND2_X1)                         0.03       1.80 f
+  FETCH/add_37/U128/ZN (NOR2_X1)                          0.04       1.84 r
+  FETCH/add_37/U133/ZN (NAND2_X1)                         0.03       1.87 f
+  FETCH/add_37/U142/ZN (NOR2_X1)                          0.05       1.92 r
+  FETCH/add_37/U16/CO (HA_X1)                             0.06       1.98 r
+  FETCH/add_37/U15/CO (HA_X1)                             0.06       2.04 r
+  FETCH/add_37/U14/CO (HA_X1)                             0.06       2.09 r
+  FETCH/add_37/U13/CO (HA_X1)                             0.06       2.15 r
+  FETCH/add_37/U12/CO (HA_X1)                             0.06       2.21 r
+  FETCH/add_37/U11/CO (HA_X1)                             0.06       2.27 r
+  FETCH/add_37/U10/CO (HA_X1)                             0.06       2.32 r
+  FETCH/add_37/U9/CO (HA_X1)                              0.06       2.38 r
+  FETCH/add_37/U8/CO (HA_X1)                              0.06       2.44 r
+  FETCH/add_37/U7/CO (HA_X1)                              0.06       2.50 r
+  FETCH/add_37/U6/CO (HA_X1)                              0.06       2.56 r
+  FETCH/add_37/U5/CO (HA_X1)                              0.05       2.61 r
+  FETCH/add_37/U88/ZN (AND2_X1)                           0.04       2.65 r
+  FETCH/add_37/U3/CO (HA_X1)                              0.06       2.71 r
+  FETCH/add_37/U2/CO (HA_X1)                              0.06       2.77 r
+  FETCH/add_37/U143/Z (XOR2_X1)                           0.06       2.83 r
+  FETCH/add_37/SUM[31] (RISC_VDATAPATH_DW01_add_3)        0.00       2.83 r
+  U2940/ZN (NAND2_X1)                                     0.03       2.86 f
+  U2942/ZN (NAND2_X1)                                     0.03       2.89 r
+  IFID/PC4REGISTER/Q_reg[31]/D (DFFR_X1)                  0.01       2.90 r
+  data arrival time                                                  2.90
+
+  clock MY_CLK (rise edge)                                3.00       3.00
+  clock network delay (ideal)                             0.00       3.00
+  clock uncertainty                                      -0.07       2.93
+  IFID/PC4REGISTER/Q_reg[31]/CK (DFFR_X1)                 0.00       2.93 r
+  library setup time                                     -0.03       2.90
+  data required time                                                 2.90
+  --------------------------------------------------------------------------
+  data required time                                                 2.90
+  data arrival time                                                 -2.90
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

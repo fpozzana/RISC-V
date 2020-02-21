@@ -1,0 +1,126 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'RISC_VDATAPATH' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : RISC_VDATAPATH
+Version: O-2018.06-SP4
+Date   : Thu Feb  6 13:41:36 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: IFID/INSTRUCTIONREGISTER/Q_reg[2]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: IFID/PC4REGISTER/Q_reg[31]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RISC_VDATAPATH     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  IFID/INSTRUCTIONREGISTER/Q_reg[2]/CK (DFFR_X1)          0.00 #     0.00 r
+  IFID/INSTRUCTIONREGISTER/Q_reg[2]/QN (DFFR_X1)          0.07       0.07 f
+  U2841/ZN (INV_X1)                                       0.03       0.10 r
+  U2989/ZN (OR2_X1)                                       0.04       0.15 r
+  U2985/ZN (OR4_X1)                                       0.04       0.19 r
+  U3085/ZN (OAI211_X1)                                    0.04       0.23 f
+  U7752/ZN (OAI21_X1)                                     0.05       0.28 r
+  U7753/ZN (OAI22_X1)                                     0.03       0.31 f
+  DECODE/IMMEXT/ImmediateOut_reg[1]/Q (DLH_X1)            0.08       0.39 f
+  r851/B[1] (RISC_VDATAPATH_DW01_add_2)                   0.00       0.39 f
+  r851/U95/ZN (NAND2_X1)                                  0.04       0.43 r
+  r851/U97/ZN (NAND3_X1)                                  0.04       0.47 f
+  r851/U101/ZN (NAND2_X1)                                 0.03       0.50 r
+  r851/U17/ZN (NAND3_X1)                                  0.04       0.54 f
+  r851/U22/ZN (NAND2_X1)                                  0.04       0.58 r
+  r851/U4/ZN (NAND3_X1)                                   0.04       0.61 f
+  r851/U106/ZN (NAND2_X1)                                 0.04       0.65 r
+  r851/U109/ZN (NAND3_X1)                                 0.04       0.69 f
+  r851/U14/ZN (NAND2_X1)                                  0.03       0.72 r
+  r851/U7/ZN (NAND3_X1)                                   0.04       0.76 f
+  r851/U112/ZN (NAND2_X1)                                 0.04       0.80 r
+  r851/U86/ZN (NAND3_X1)                                  0.04       0.84 f
+  r851/U45/ZN (NAND2_X1)                                  0.04       0.88 r
+  r851/U66/ZN (NAND3_X1)                                  0.03       0.91 f
+  r851/U124/ZN (NAND2_X1)                                 0.03       0.94 r
+  r851/U127/ZN (NAND3_X1)                                 0.03       0.97 f
+  r851/U1_9/CO (FA_X1)                                    0.10       1.07 f
+  r851/U137/ZN (NAND2_X1)                                 0.04       1.10 r
+  r851/U84/ZN (NAND3_X1)                                  0.04       1.15 f
+  r851/U177/ZN (NAND2_X1)                                 0.04       1.18 r
+  r851/U163/ZN (NAND3_X1)                                 0.05       1.23 f
+  r851/U25/ZN (NAND2_X1)                                  0.04       1.26 r
+  r851/U38/ZN (NAND3_X1)                                  0.03       1.30 f
+  r851/U27/ZN (NAND2_X1)                                  0.04       1.33 r
+  r851/U82/ZN (NAND3_X1)                                  0.04       1.37 f
+  r851/U156/ZN (NAND2_X1)                                 0.03       1.40 r
+  r851/U147/ZN (NAND3_X1)                                 0.04       1.44 f
+  r851/U227/ZN (NAND2_X1)                                 0.04       1.48 r
+  r851/U183/ZN (NAND3_X1)                                 0.04       1.52 f
+  r851/U26/ZN (NAND2_X1)                                  0.04       1.56 r
+  r851/U242/ZN (NAND3_X1)                                 0.03       1.59 f
+  r851/U247/ZN (NAND2_X1)                                 0.03       1.62 r
+  r851/U248/ZN (NAND3_X1)                                 0.03       1.65 f
+  r851/U1_18/CO (FA_X1)                                   0.10       1.75 f
+  r851/U151/ZN (NAND2_X1)                                 0.04       1.78 r
+  r851/U145/ZN (NAND3_X1)                                 0.04       1.82 f
+  r851/U171/ZN (NAND2_X1)                                 0.04       1.86 r
+  r851/U174/ZN (NAND3_X1)                                 0.04       1.90 f
+  r851/U193/ZN (NAND2_X1)                                 0.04       1.94 r
+  r851/U44/ZN (NAND3_X1)                                  0.03       1.97 f
+  r851/U198/ZN (NAND2_X1)                                 0.04       2.01 r
+  r851/U200/ZN (NAND3_X1)                                 0.04       2.04 f
+  r851/U142/ZN (NAND2_X1)                                 0.04       2.08 r
+  r851/U79/ZN (NAND3_X1)                                  0.04       2.11 f
+  r851/U215/ZN (NAND2_X1)                                 0.03       2.15 r
+  r851/U217/ZN (NAND3_X1)                                 0.04       2.19 f
+  r851/U221/ZN (NAND2_X1)                                 0.04       2.22 r
+  r851/U161/ZN (NAND3_X1)                                 0.04       2.26 f
+  r851/U46/ZN (NAND2_X1)                                  0.04       2.30 r
+  r851/U64/ZN (NAND3_X1)                                  0.03       2.33 f
+  r851/U75/ZN (NAND2_X1)                                  0.03       2.37 r
+  r851/U63/ZN (NAND3_X1)                                  0.04       2.40 f
+  r851/U131/ZN (NAND2_X1)                                 0.04       2.44 r
+  r851/U68/ZN (NAND3_X1)                                  0.04       2.48 f
+  r851/U167/ZN (NAND2_X1)                                 0.04       2.51 r
+  r851/U159/ZN (NAND3_X1)                                 0.04       2.56 f
+  r851/U187/ZN (NAND2_X1)                                 0.03       2.59 r
+  r851/U18/ZN (AND3_X1)                                   0.05       2.64 r
+  r851/U2/Z (XOR2_X1)                                     0.03       2.67 f
+  r851/SUM[31] (RISC_VDATAPATH_DW01_add_2)                0.00       2.67 f
+  U8220/ZN (AOI22_X1)                                     0.04       2.71 r
+  U8221/ZN (INV_X1)                                       0.03       2.74 f
+  FETCH/add_37/B[31] (RISC_VDATAPATH_DW01_add_3)          0.00       2.74 f
+  FETCH/add_37/U145/Z (XOR2_X1)                           0.07       2.81 f
+  FETCH/add_37/SUM[31] (RISC_VDATAPATH_DW01_add_3)        0.00       2.81 f
+  U2967/Z (MUX2_X1)                                       0.07       2.88 f
+  IFID/PC4REGISTER/Q_reg[31]/D (DFFR_X1)                  0.01       2.89 f
+  data arrival time                                                  2.89
+
+  clock MY_CLK (rise edge)                                3.00       3.00
+  clock network delay (ideal)                             0.00       3.00
+  clock uncertainty                                      -0.07       2.93
+  IFID/PC4REGISTER/Q_reg[31]/CK (DFFR_X1)                 0.00       2.93 r
+  library setup time                                     -0.04       2.89
+  data required time                                                 2.89
+  --------------------------------------------------------------------------
+  data required time                                                 2.89
+  data arrival time                                                 -2.89
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

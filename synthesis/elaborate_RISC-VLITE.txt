@@ -1,0 +1,187 @@
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/gtech.db'
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'RISC_VDATAPATH'.
+Information: Building the design 'fetchStage'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ifidReg'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'decodeStage'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'idexReg'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'executionStage'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'exmemReg'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'memwbReg'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'writebackStage'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'REGISTER_ENABLE' instantiated from design 'ifidReg' with
+	the parameters "NBIT=32". (HDL-193)
+
+Inferred memory devices in process
+	in routine REGISTER_ENABLE_NBIT32 line 23 in file
+		'../src/registerEnable.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'REGISTER_FILE' instantiated from design 'decodeStage' with
+	the parameters "numBit_data=32,numBit_address=5,numBit_registers=32". (HDL-193)
+Warning:  ../src/registerFile.vhd:32: The initial value for signal 'REGISTERS' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+
+Inferred memory devices in process
+	in routine REGISTER_FILE_numBit_data32_numBit_address5_numBit_registers32 line 35 in file
+		'../src/registerFile.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    REGISTERS_reg    | Flip-flop | 1024  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine REGISTER_FILE_numBit_data32_numBit_address5_numBit_registers32 line 46 in file
+		'../src/registerFile.vhd'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|  Data_one_out_reg   | Latch |  32   |  Y  | N  | N  | N  | -  | -  | -  |
+|  Data_two_out_reg   | Latch |  32   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Statistics for MUX_OPs
+=======================================================================================================
+|                         block name/line                           | Inputs | Outputs | # sel inputs |
+=======================================================================================================
+| REGISTER_FILE_numBit_data32_numBit_address5_numBit_registers32/53 |   32   |   32    |      5       |
+| REGISTER_FILE_numBit_data32_numBit_address5_numBit_registers32/54 |   32   |   32    |      5       |
+=======================================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'BDU'. (HDL-193)
+
+Statistics for case statements in always block at line 61 in file
+	'../src/BDU.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            64            |    auto/auto     |
+|            66            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'IMMEXTENDER'. (HDL-193)
+
+Statistics for case statements in always block at line 21 in file
+	'../src/ImmediateExtender.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            23            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine IMMEXTENDER line 21 in file
+		'../src/ImmediateExtender.vhd'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|  ImmediateOut_reg   | Latch |  32   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'ALUCONTROLLER'. (HDL-193)
+
+Statistics for case statements in always block at line 27 in file
+	'../src/aluController.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            34            |    auto/auto     |
+|            54            |    auto/auto     |
+|            71            |    auto/auto     |
+|            80            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'controlUnit'. (HDL-193)
+
+Statistics for case statements in always block at line 42 in file
+	'../src/controlUnit.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            45            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'HDU'. (HDL-193)
+
+Inferred memory devices in process
+	in routine HDU line 24 in file
+		'../src/HDU.vhd'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|    hazardOut_reg    | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'REGISTER_GENERIC' instantiated from design 'idexReg' with
+	the parameters "NBIT=5". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'REGISTER_GENERIC' instantiated from design 'idexReg' with
+	the parameters "NBIT=32". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'REGISTER_GENERIC' instantiated from design 'idexReg' with
+	the parameters "NBIT=7". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'FD'. (HDL-193)
+
+Inferred memory devices in process
+	in routine FD line 13 in file
+		'../src/fd.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'REGISTER_GENERIC' instantiated from design 'idexReg' with
+	the parameters "NBIT=2". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'REGISTER_GENERIC' instantiated from design 'idexReg' with
+	the parameters "NBIT=3". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'MUX21_GENERIC' instantiated from design 'executionStage' with
+	the parameters "NBIT=32". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'MUX3TO1'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU'. (HDL-193)
+
+Statistics for case statements in always block at line 21 in file
+	'../src/alu.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            23            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine ALU line 21 in file
+		'../src/alu.vhd'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|     aluOut_reg      | Latch |  32   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'FWU'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'IV'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ND2'. (HDL-193)
+Presto compilation completed successfully.
+1
